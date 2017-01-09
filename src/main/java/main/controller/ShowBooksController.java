@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import main.model.Book;
@@ -41,6 +42,25 @@ public class ShowBooksController {
 		return "home";
 	}
 	
+	@GetMapping("/getBooksByCategory")
+	public String getBooksByCategory(@RequestParam int id, HttpServletRequest request, HttpSession session) {
+		
+		if((id < 0)) {
+			return "redirect:home";
+		}
+		
+		List<Category> categories = categoryService.findAll();
+		request.setAttribute("categories", categories); 
+		
+		List<Book> books = bookService.getBooksByCategoryId(id);
+		request.setAttribute("books", books);
+		request.setAttribute("chosenCategory", id);
+		
+		
+		return "home";
+
+	}
+	
 	@GetMapping("/mybooks")
 	public String mybooks(Model model, HttpServletRequest request, HttpSession session) {
 		
@@ -55,16 +75,26 @@ public class ShowBooksController {
 	}
 	
 	@GetMapping("/viewbook")
-	public String viewbook(Model model, HttpServletRequest request, HttpSession session) {
+	public String viewbook(@RequestParam int id, HttpServletRequest request, HttpSession session) {
+		
+		if(!(id > 0)) {
+			return "redirect:home";
+		}
+		
+		Book book = bookService.findBookById(id);
+		if(book == null) {
+			return "redirect:home";
+		}
+		
+		String username = userService.getUsernameById(book.getUserid());
 		
 		List<Category> categories = categoryService.findAll();
 		request.setAttribute("categories", categories); 
+		request.setAttribute("book", book); 
+		request.setAttribute("username", username); 
 		
-		long userId = userService.getUserIdByUsername((String)session.getAttribute("logged_user"));
-		List<Book> books = bookService.findBooksByUserId(userId);
-		request.setAttribute("books", books);
 		
-		return "mybooks";
+		return "viewbook";
 	}
 	
 	@RequestMapping(value = "/imageController/{bookId}")

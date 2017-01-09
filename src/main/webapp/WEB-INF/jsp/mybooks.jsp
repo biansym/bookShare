@@ -49,9 +49,10 @@
 	                 		</c:otherwise>
 	                 	</c:choose>
 	                     
-	                     <form method="POST" action="deleteBook">
+	                     <form method="POST" action="deletebook">
+	                     	<input type="hidden" id="bookid" name="bookid" value="${book.id}">                     	
 		                    <div class="caption">
-		                        <h4><a href="#">${book.name}</a></h4>
+		                        <h4><a href="viewbook?id=${book.id}">${book.name}</a></h4>
 		                        <h4>${book.author}</h4>
 		                        <p>${book.description}</p>
 		                        <div class="text-right">

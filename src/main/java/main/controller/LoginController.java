@@ -68,7 +68,9 @@ public class LoginController {
         		request.setAttribute("loginuser", loginuser);
         		return "login";
         	} else {
-        		session.setAttribute("logged_user", loginuser.getUsername());
+        		String username = loginuser.getUsername();
+        		session.setAttribute("logged_user", username);
+        		session.setAttribute("userid", userService.getUserIdByUsername(username));
         		//correct data
         		return "home";
         	}

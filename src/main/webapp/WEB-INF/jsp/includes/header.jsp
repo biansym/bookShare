@@ -12,18 +12,18 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="home">Books</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="about">About</a></li>
             <c:if test="${!empty sessionScope.logged_user}">
 		  		 <li><a href="mybooks">My books</a></li>
 			</c:if>
 			<c:if test="${!empty sessionScope.logged_user}">
-		  		 <li><a href="#">Get book</a></li>
+		  		 <li><a href="requestedbooks">Get book</a></li>
 			</c:if>
 			<c:if test="${!empty sessionScope.logged_user}">
-		  		 <li><a href="#">Share book</a></li>
+		  		 <li><a href="getsharedbooks">Share book</a></li>
 			</c:if>
 			<c:if test="${!empty sessionScope.logged_user}">
-		  		 <li><a href="#" style="color:blue">${sessionScope.logged_user}</a></li>
+		  		 <li><a href="profile?username=${sessionScope.logged_user}" style="color:blue">${sessionScope.logged_user}</a></li>
 			</c:if>
 			<c:choose>
 				<c:when test="${!empty sessionScope.logged_user}">

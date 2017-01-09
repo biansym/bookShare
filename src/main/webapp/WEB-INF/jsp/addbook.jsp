@@ -71,10 +71,19 @@
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="image">Choose image</label> 
 			  <div class="col-md-4">
-			  	<input id="image" name="image" type="file" value="${book.image}"/>
-			  	<form:errors path="image" class="error text-danger"></form:errors> 
+			  	<input id="image" name="image" type="file" accept="image/*" value="${book.image}"/>
+<%--			  	<form:errors path="image" class="error text-danger"></form:errors>  --%>
 			  </div>
 			</div>
+			
+			<c:if test="${not empty bookError}">
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="image"></label> 
+				  <div class="col-md-4" style="color:red">
+				  		${bookError}
+				  </div>
+				</div>
+			</c:if>
 
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="submit"></label>

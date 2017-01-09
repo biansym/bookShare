@@ -46,22 +46,28 @@
 	                 	</c:choose>
 	                 </div>
 	                 	                     
-	                     <form method="POST" action="deleteBook">
+	                     <form method="POST" action="getbook" name="getBookForm" id="getBookForm">
+	                     	<input type="hidden" id="userid" name="userid" value="${sessionScope.userid}"/>
+	                     	<input type="hidden" id="bookid" name="bookid" value="${book.id}"/>
 		                    <div class="caption">
 		                        <h4>${book.name}</h4>
 		                        <h4>${book.author}</h4>
 		                        <p>${book.description}</p>
+		                        <h3><a href="profile?username=${sessionScope.logged_user}">${username}</a></h3>
 		                    </div>
 		                    <div class="form-group">
 								  <label for="comment">Comment:</label>
 								  <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
 							</div>
+							
+							<c:if test="${!empty sessionScope.logged_user}">
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="submit"></label>
 								  <div class="col-md-4">
 								    <button type="submit" id="submit" name="submit" class="btn btn-success">I want it!</button>
 								  </div>
 							</div>
+							</c:if>
 	                     </form>
 	             </div>
 		</div>

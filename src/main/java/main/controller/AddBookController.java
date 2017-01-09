@@ -42,7 +42,7 @@ public class AddBookController {
 	public String addbookget(Model model, HttpServletRequest request, HttpSession session) {
 		
 		if(session.getAttribute("logged_user") == null || ((String)session.getAttribute("logged_user")).equals("")) {
-			return "index";
+			return "home";
 		}
 		
 		List<Category> categories = categoryService.findAll();
@@ -53,7 +53,7 @@ public class AddBookController {
 	}
 	
 	@PostMapping("/addbook")
-	public String addbookpost(@RequestParam("image") MultipartFile image, @ModelAttribute("addBookForm") @Valid Book book, BindingResult bindingResult, HttpServletRequest request,
+	public String addbookpost(@RequestParam("image") MultipartFile image, @ModelAttribute("addBookForm") Book book, BindingResult bindingResult, HttpServletRequest request,
 			 HttpSession session) throws IOException, ServletException {
 		
 		if(session.getAttribute("logged_user") == null || ((String)session.getAttribute("logged_user")).equals("")) {
@@ -63,13 +63,26 @@ public class AddBookController {
 		List<Category> categories = categoryService.findAll();
 		request.setAttribute("categories", categories);
 		 
+		if(book.getAuthor().equals("") || book.getDescription().equals("") || book.getName().equals("") ||
+				book.getAuthor() == null || book.getDescription() == null || book.getName() == null) {
+			request.setAttribute("bookError", "Please fill all fields (image is optional)");
+			request.setAttribute("book", book);
+			return "addbook";
+		}
 		
 		if (image != null) {
+			
+			if(image.getSize() > 2000000) {
+				request.setAttribute("bookError", "Image is too big. Maximum size: 500 kB");
+				request.setAttribute("book", book);
+				return "addbook";
+			}
+			
 			long userid = userService.getUserIdByUsername((String)session.getAttribute("logged_user"));
         	book.setUserid(userid);
-                book.setImage(image.getBytes());
-                bookService.save(book);               
-                return "index";
+            book.setImage(image.getBytes());
+            bookService.save(book);               
+            return "redirect:mybooks";
         } else {
         	return "addbook";
         }

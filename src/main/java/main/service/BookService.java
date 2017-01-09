@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import main.dao.BookRepository;
 import main.model.Book;
+import main.model.SharedBookNotConfirmed;
 
 @Service
 @Transactional
@@ -23,6 +24,14 @@ public class BookService {
 	public List<Book> findAll() {
 		List<Book> books = new ArrayList<>();
 		for(Book book: repository.findAll()) {
+			books.add(book);
+		}
+		return books; 
+	}
+	
+	public List<Book> getBooksByCategoryId(int categoryId) {
+		List<Book> books = new ArrayList<>();
+		for(Book book: repository.getBooksByCategory(categoryId)) {
 			books.add(book);
 		}
 		return books; 
@@ -51,6 +60,14 @@ public class BookService {
 	
 	public void save(Book book) {
 		repository.save(book);
+	}
+	
+	public long getUserIdByBookid(long bookId) {
+		return repository.getUserIdByBookid(bookId);
+	}
+	
+	public long deleteBookById(long bookId) {
+		return repository.deleteById(bookId);
 	}
 	
 }

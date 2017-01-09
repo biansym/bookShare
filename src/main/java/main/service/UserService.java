@@ -55,4 +55,22 @@ public class UserService {
 		}
 	}
 	
+	public String getUsernameById(long id) {
+		List<User> users = userRepository.findById(id);
+		if(users.size() > 0) {
+			return users.get(0).getUsername();
+		} else {
+			return "";
+		}
+	}
+	
+	public User getUserByUsername(String username) {
+		List<User> users = userRepository.findByUsername(username);
+		if(users.size() > 0) {
+			return users.get(0);
+		} else {
+			return null;
+		}
+	}
+	
 }
