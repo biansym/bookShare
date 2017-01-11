@@ -72,7 +72,7 @@ public class LoginController {
         		session.setAttribute("logged_user", username);
         		session.setAttribute("userid", userService.getUserIdByUsername(username));
         		//correct data
-        		return "home";
+        		return "redirect:home";
         	}
         }
 

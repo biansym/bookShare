@@ -101,7 +101,7 @@ public class ShowBooksController {
 	@ResponseBody
 	public byte[] helloWorld(@PathVariable long bookId)  {
 	  Book book = bookService.findBookById(bookId);
-	  if(book == null) 
+	  if(book.getImage() == null || book.getImage().length < 5) 
 		  return null;
 	  return book.getImage();
 	}

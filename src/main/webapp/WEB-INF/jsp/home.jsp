@@ -17,6 +17,8 @@
 	<link href="static/css/offcanvas.css" rel="stylesheet">
 	<script src="static/js/bootstrap.min.js"></script>
 	
+	<link href="static/css/background.css" rel="stylesheet">
+	
 	<title>Book share!</title>
 </head>
 <body>	
@@ -28,15 +30,19 @@
       	<%@include file="includes/sidebar.jsp" %>
 		
 		<div class="col-md-9">
+		<div class="row">
 			<c:forEach var="book" items="${books}">
 	     		<div class="col-sm-4 col-lg-4 col-md-4">
+	     			
 	                 <div class="thumbnail">
+	                 
+	                 	<c:set var="imageSrc" value="${pageContext.request.contextPath}/imageController/${book.id}"/>
 	                 	<c:choose>
-	                 		<c:when test="${pageContext.request.contextPath}/imageController/${book.id} == null">
+	                 		<c:when test="${empty book.image}">
 	                 			<img src="http://placehold.it/150x200" alt="">
 	                 		</c:when>
 	                 		<c:otherwise>
-	                 			<img src="${pageContext.request.contextPath}/imageController/${book.id}" class="img-thumbnail" width="150" height="200"/>
+	                 			<img src="${pageContext.request.contextPath}/imageController/${book.id}" class="img-thumbnail pull-left" width="150" height="200"/>
 	                 		</c:otherwise>
 	                 	</c:choose>
 	                     
@@ -45,8 +51,9 @@
 	                         <h4>${book.author}</h4>
 	                     </div>
 	                 </div>
-	             </div>
+                 </div>  
 	     	</c:forEach>
+	     	</div>
 		</div>
        </div>
     </div><!--/.container-->

@@ -76,7 +76,7 @@ public class GetSharedBooksController {
 	
 		bookRequestService.removeRequestById(id);
 		
-		return "redirect:home";
+		return "redirect:getsharedbooks";
 	}
 	
 	@GetMapping("/rejectbook")
