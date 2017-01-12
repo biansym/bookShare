@@ -28,16 +28,24 @@
 			<%@include file="includes/sidebar.jsp" %>
         <div class="col-xs-12 col-sm-9">
 		
-        <h1>${user.username}</h1>
-        <h2>${user.email}</h2>
+		<div align="center">
+        	<h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span>   ${user.username}</h1>
+        	<h2><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>   ${user.email}</h2>
+        </div>
         
         <table border="1">
-        	<c:forEach var="reference" items="${references}">
-        	<tr>
-        		<td>${reference.fromuser}</td>
-        		<td>${reference.review}</td>
-        	</tr>
-        	</c:forEach>
+        	<c:choose>
+        		<c:when test="${empty references}">
+        			<h3> No references </h3>
+        		</c:when>
+        		<c:otherwise>
+	        		<c:forEach var="reference" items="${references}">
+		        		<div class="alert alert-success" role="alert">
+				        	<a href="profile?username=${reference.fromuser}"><b>${reference.fromuser}</b></a>  | ${reference.review}		
+						</div>
+	        		</c:forEach>
+        		</c:otherwise>
+        	</c:choose>
         </table>
          
         </div>

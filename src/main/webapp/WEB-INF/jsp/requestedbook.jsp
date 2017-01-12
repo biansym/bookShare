@@ -25,13 +25,7 @@
 	
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
-      	<div class="col-md-3 sidebar-offcanvas" id="sidebar">
-		     <div class="list-group">
-		     	<c:forEach var="category" items="${categories}">
-		     		<a href="#" class="list-group-item">${category.name}</a>
-		     	</c:forEach>
-		     </div>
-		</div>
+      	<%@include file="includes/sidebar.jsp" %>
 		
 		<div class="col-md-9">
 			<c:forEach var="book" items="${books}">

@@ -32,10 +32,9 @@
 		     	</c:forEach>
 		     </div>
 		</div>
-		
 		<div class="col-md-9">
 	     		<div class="col-sm-4 col-lg-4 col-md-4">
-	                 <div class="thumbnail">
+	                 <div class="thumbnail" >
 	                 	<c:choose>
 	                 		<c:when test="${pageContext.request.contextPath}/imageController/${book.id} == null">
 	                 			<img src="http://placehold.it/150x200" alt="">
@@ -53,7 +52,7 @@
 		                        <h4>${book.name}</h4>
 		                        <h4>${book.author}</h4>
 		                        <p>${book.description}</p>
-		                        <h3><a href="profile?username=${sessionScope.logged_user}">${username}</a></h3>
+		                        <h3><a href="profile?username=${username}">${username}</a></h3>
 		                    </div>
 		                    <div class="form-group">
 								  <label for="comment">Comment:</label>

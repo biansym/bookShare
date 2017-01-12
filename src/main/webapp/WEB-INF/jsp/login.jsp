@@ -17,6 +17,8 @@
 	<link href="static/css/offcanvas.css" rel="stylesheet">
 	<script src="static/js/bootstrap.min.js"></script>
 	
+	<link href="static/css/background.css" rel="stylesheet">
+	
 	<title>Login</title>
 </head>
 <body>	
@@ -41,7 +43,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="email">Password</label>  
+			  <label class="col-md-4 control-label" for="password">Password</label>  
 			  <div class="col-md-4">
 			  	<input id="password" name="password" type="password" placeholder="password" class="form-control input-md" value="${loginuser.password}" required/>
 			  	<form:errors path="password" class="error text-danger"></form:errors> 

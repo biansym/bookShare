@@ -17,7 +17,8 @@
 	<link href="static/css/offcanvas.css" rel="stylesheet">
 	<script src="static/js/bootstrap.min.js"></script>
 	
-	<link href="static/css/background.css" rel="stylesheet">
+	    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	
 	<title>Book share!</title>
 </head>
@@ -29,33 +30,53 @@
       <div class="row row-offcanvas row-offcanvas-right">
       	<%@include file="includes/sidebar.jsp" %>
 		
-		<div class="col-md-9">
-		<div class="row">
-			<c:forEach var="book" items="${books}">
-	     		<div class="col-sm-4 col-lg-4 col-md-4">
-	     			
-	                 <div class="thumbnail">
-	                 
-	                 	<c:set var="imageSrc" value="${pageContext.request.contextPath}/imageController/${book.id}"/>
-	                 	<c:choose>
-	                 		<c:when test="${empty book.image}">
-	                 			<img src="http://placehold.it/150x200" alt="">
-	                 		</c:when>
-	                 		<c:otherwise>
-	                 			<img src="${pageContext.request.contextPath}/imageController/${book.id}" class="img-thumbnail pull-left" width="150" height="200"/>
-	                 		</c:otherwise>
-	                 	</c:choose>
-	                     
-	                     <div class="caption">
-	                         <h4><a href="viewbook?id=${book.id}">${book.name}</a></h4>
-	                         <h4>${book.author}</h4>
-	                     </div>
-	                 </div>
-                 </div>  
-	     	</c:forEach>
-	     	</div>
+		<div class="col-md-9 grid">
+			<c:choose>
+				<c:when test="${empty books}">
+					<h1> No books </h1>
+				</c:when>
+				<c:otherwise>
+					<c:forEach var="book" items="${books}" varStatus="theCount">
+			     		<div class="col-sm-4 col-lg-4 col-md-4" >
+			     			
+			                 <div class="thumbnail .clearfix" style="background-size: cover; overflow: hidden; float:left; width:250px; height:350px;">
+			                 
+			                 	<c:set var="imageSrc" value="${pageContext.request.contextPath}/imageController/${book.id}"/>
+			                 	<c:choose>
+			                 		<c:when test="${empty book.image}">
+			                 			<img src="http://placehold.it/150x200" alt="">
+			                 		</c:when>
+			                 		<c:otherwise>
+			                 			<img src="${pageContext.request.contextPath}/imageController/${book.id}" class="img-thumbnail" width="150" height="200"/>
+			                 		</c:otherwise>
+			                 	</c:choose>
+			                     
+			                     <div class="caption">
+			                         <h4><a href="viewbook?id=${book.id}">${book.name}</a></h4>
+			                         <h4>${book.author}</h4>
+			                     </div>
+			                 </div>
+                 		</div>  
+	     			</c:forEach>
+				</c:otherwise>
+			</c:choose>
+
 		</div>
        </div>
     </div><!--/.container-->
+    
+    
+<script>
+    // init Masonry
+    var $grid = $('.grid').masonry({
+        // options...
+        itemSelector: '.grid-item',
+        columnWidth: 285
+    });
+    // layout Masonry after each image loads
+    $grid.imagesLoaded().progress( function() {
+        $grid.masonry('layout');
+    });
+</script>
 </body>
 </html>

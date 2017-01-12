@@ -32,9 +32,16 @@
 
 			<legend>Leave reference</legend>
 			
+
 				<input type="hidden" name="takenbookid" id="takenbookid" value="${takenbookid}"/>
-				Feedback:
-				<input id="review" name="review" type="text" placeholder="author" class="form-control input-md" required/>  
+
+				<div class="form-group">
+					<label>Feedback: </label>
+					<div>
+					<input id="review" name="review" type="text" placeholder="How would you rate this user's reliability?" class="form-control input-md" required/>  
+					</div>
+				</div>
+				
 
 			    <button type="submit" id="submit" name="submit" class="btn btn-success">Submit</button>
 
