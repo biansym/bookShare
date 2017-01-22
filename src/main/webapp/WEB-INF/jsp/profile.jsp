@@ -12,7 +12,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	<link href="static/css/bootstrap.min.css" rel="stylesheet">
 	<link href="static/css/offcanvas.css" rel="stylesheet">
 	<script src="static/js/bootstrap.min.js"></script>
@@ -22,26 +26,27 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	
+	<legend style="text-align:center;color:white;">My profile</legend>
+
+
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
-			<%@include file="includes/sidebar.jsp" %>
-        <div class="col-xs-12 col-sm-9">
+        <div class="col-sm-12">
 		
 		<div align="center">
-        	<h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span>   ${user.username}</h1>
-        	<h2><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>   ${user.email}</h2>
+        	<h1 style="color: white;"><span class="glyphicon glyphicon-user" aria-hidden="true" style="color: white;"></span>   ${user.username}</h1>
+        	<h2 style="color: white;"><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: white;"></span>   ${user.email}</h2>
         </div>
         
         <table border="1">
         	<c:choose>
         		<c:when test="${empty references}">
-        			<h3> No references </h3>
+        			<h3 style="color: white;"> No references </h3>
         		</c:when>
         		<c:otherwise>
 	        		<c:forEach var="reference" items="${references}">
 		        		<div class="alert alert-success" role="alert">
-				        	<a href="profile?username=${reference.fromuser}"><b>${reference.fromuser}</b></a>  | ${reference.review}		
+				        	<a href="profile?username=${reference.fromuser}"><b>${reference.fromuser}</b></a>  | ${reference.review}
 						</div>
 	        		</c:forEach>
         		</c:otherwise>

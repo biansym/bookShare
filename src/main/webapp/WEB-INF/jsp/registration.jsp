@@ -8,32 +8,44 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
-	<link href="static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="static/css/offcanvas.css" rel="stylesheet">
-	<script src="static/js/bootstrap.min.js"></script>
-	
+	    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+
+    	<link href="static/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="static/css/offcanvas.css" rel="stylesheet">
+    	<script src="static/js/bootstrap.min.js"></script>
+
 	<title>Register</title>
 </head>
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	
+	<legend style="text-align:center;color:white;">Register</legend>
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
-			<%@include file="includes/sidebar.jsp" %>
-        <div class="col-xs-12 col-sm-9">
+
 		<form:form class="form-horizontal" method="POST" action="register" modelAttribute="userForm">
 			<fieldset>
 
-			<legend>Registration</legend>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="username">Username</label>  
+			  <label class="col-md-4 control-label" for="username" style="color:white;">Username</label>
 			  <div class="col-md-4">
 				  	<input id="username" name="username" type="text" placeholder="username" class="form-control input-md" value="${user.username}" required/>    
 				  	<form:errors path="username" class="error text-danger"></form:errors>
@@ -44,7 +56,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="name">First name</label>  
+			  <label class="col-md-4 control-label" for="name" style="color:white;">First name</label>
 			  <div class="col-md-4">
 				  <input id="name" name="name" type="text" placeholder="first name" class="form-control input-md" value="${user.name}" required/>    
 				  <form:errors path="name" class="error text-danger"></form:errors>
@@ -52,7 +64,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="surname">Last name</label>  
+			  <label class="col-md-4 control-label" for="surname" style="color:white;">Last name</label>
 			  <div class="col-md-4">
 				  <input id="surname" name="surname" type="text" placeholder="last name" class="form-control input-md" value="${user.surname}" required/>  
 				  <form:errors path="surname" class="error text-danger"></form:errors>
@@ -60,7 +72,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="email">Email</label>  
+			  <label class="col-md-4 control-label" for="email" style="color:white;">Email</label>
 			  <div class="col-md-4">
 				  <input id="email" name="email" type="email" placeholder="email" class="form-control input-md" value="${user.email}" required/> 
 				  <form:errors path="name" class="error text-danger"></form:errors>
@@ -68,7 +80,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="email">Password</label>  
+			  <label class="col-md-4 control-label" for="email" style="color:white;">Password</label>
 			  <div class="col-md-4">
 			  	<input id="password" name="password" type="password" placeholder="password" class="form-control input-md" value="${user.password}" required/>
 			  	<form:errors path="password" class="error text-danger"></form:errors> 
@@ -77,9 +89,14 @@
 
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="submit"></label>
-			  <div class="col-md-4">
-			    <button type="submit" id="submit" name="submit" class="btn btn-success">Register</button>
-			    <button type="reset"  class="btn btn-warning">Reset</button>
+			  <div class="col-md-4" style="text-align:center;">
+			    <button type="submit" id="submit" name="submit" style="width:100%;" class="btn btn-success">Register</button>
+			    <br></br>
+			    <button type="reset" style="width:100%" class="btn btn-warning">Reset</button>
+			    <br></br>
+                <h5 class="title" style="color: white;">Have a count?</h5>
+                <h6 class="title" style="color: white;">Login!</h6>
+                <a href="login" class="btn btn-success" style="width:100%;">Login</a>
 			  </div>
 			</div>
 			

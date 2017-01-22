@@ -12,7 +12,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	<link href="static/css/bootstrap.min.css" rel="stylesheet">
 	<link href="static/css/offcanvas.css" rel="stylesheet">
 	<script src="static/js/bootstrap.min.js"></script>
@@ -22,21 +26,22 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	
+	<legend style="text-align:center;color:white;">My books</legend>
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
-      	<div class="col-md-3 sidebar-offcanvas" id="sidebar">
-		     <div class="list-group">
-		     	<c:forEach var="category" items="${categories}">
-		     		<a href="#" class="list-group-item">${category.name}</a>
-		     	</c:forEach>
-		     </div>
-		</div>
+
 		
-		<div class="col-md-9">
+		<div class="col-md-12">
+		    <c:forEach var="book" items="${books} == null">
+		    <h1 class="instructions" style="color: white; font-size: 20px;">
+                Upload your first book! It is easy.
+                Click in the next button "ADD A NEW BOOK!" and follow the instructions there!
+            </h1>
+            </c:forEach>
 			<p>
 				<a href="addbook" class="btn btn-primary btn-lg btn-block">Add new book!</a>
 			</p>
+
 			<c:forEach var="book" items="${books}">
 	     		<div class="col-sm-4 col-lg-4 col-md-4">
 	                 <div class="thumbnail">

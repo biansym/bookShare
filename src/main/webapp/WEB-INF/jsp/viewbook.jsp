@@ -12,7 +12,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	<link href="static/css/bootstrap.min.css" rel="stylesheet">
 	<link href="static/css/offcanvas.css" rel="stylesheet">
 	<script src="static/js/bootstrap.min.js"></script>
@@ -22,15 +26,11 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	
+	<legend style="text-align:center;color:white;">Book</legend>
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
       	<div class="col-md-3 sidebar-offcanvas" id="sidebar">
-		     <div class="list-group">
-		     	<c:forEach var="category" items="${categories}">
-		     		<a href="#" class="list-group-item">${category.name}</a>
-		     	</c:forEach>
-		     </div>
+
 		</div>
 		<div class="col-md-9">
 	     		<div class="col-sm-4 col-lg-4 col-md-4">
@@ -44,18 +44,18 @@
 	                 		</c:otherwise>
 	                 	</c:choose>
 	                 </div>
-	                 	                     
+
 	                     <form method="POST" action="getbook" name="getBookForm" id="getBookForm">
 	                     	<input type="hidden" id="userid" name="userid" value="${sessionScope.userid}"/>
 	                     	<input type="hidden" id="bookid" name="bookid" value="${book.id}"/>
-		                    <div class="caption">
+		                    <div class="caption" style="color: white;">
 		                        <h4>${book.name}</h4>
 		                        <h4>${book.author}</h4>
 		                        <p>${book.description}</p>
 		                        <h3><a href="profile?username=${username}">${username}</a></h3>
 		                    </div>
 		                    <div class="form-group">
-								  <label for="comment">Comment:</label>
+								  <label for="comment"  style="color: white;">Comment:</label>
 								  <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
 							</div>
 							
