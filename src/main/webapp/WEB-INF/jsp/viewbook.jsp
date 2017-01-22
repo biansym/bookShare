@@ -28,49 +28,45 @@
 	<%@include file="includes/header.jsp" %>
 	<legend style="text-align:center;color:white;">Book</legend>
 	<div class="container">
-      <div class="row row-offcanvas row-offcanvas-right">
-      	<div class="col-md-3 sidebar-offcanvas" id="sidebar">
+		<div class="row row-offcanvas row-offcanvas-right">
 
-		</div>
-		<div class="col-md-9">
-	     		<div class="col-sm-4 col-lg-4 col-md-4">
-	                 <div class="thumbnail" >
-	                 	<c:choose>
-	                 		<c:when test="${pageContext.request.contextPath}/imageController/${book.id} == null">
-	                 			<img src="http://placehold.it/150x200" alt="">
-	                 		</c:when>
-	                 		<c:otherwise>
-	                 			<img src="${pageContext.request.contextPath}/imageController/${book.id}" class="img-thumbnail" width="150" height="200"/>
-	                 		</c:otherwise>
-	                 	</c:choose>
-	                 </div>
-
-	                     <form method="POST" action="getbook" name="getBookForm" id="getBookForm">
-	                     	<input type="hidden" id="userid" name="userid" value="${sessionScope.userid}"/>
-	                     	<input type="hidden" id="bookid" name="bookid" value="${book.id}"/>
-		                    <div class="caption" style="color: white;">
-		                        <h4>${book.name}</h4>
-		                        <h4>${book.author}</h4>
-		                        <p>${book.description}</p>
-		                        <h3><a href="profile?username=${username}">${username}</a></h3>
-		                    </div>
-		                    <div class="form-group">
-								  <label for="comment"  style="color: white;">Comment:</label>
-								  <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+			<div class="col-md-12">
+				<div class="col-sm-12 col-lg-12 col-md-12" style="text-align:center;">
+					<div class="center-block thumbnail .clearfix" style="background-color:inherit;background-image:linear-gradient(to bottom, #CAA639 0%, #FFE781 100%); background-size: cover; overflow: hidden; float:center; width:240px; height:280px;">
+						<c:choose>
+							<c:when test="${pageContext.request.contextPath}/imageController/${book.id} == null">
+								<img src="http://placehold.it/150x200" alt="">
+							</c:when>
+							<c:otherwise>
+								<img src="${pageContext.request.contextPath}/imageController/${book.id}" class="img-thumbnail" width="150" height="200"/>
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<form method="POST" action="getbook" name="getBookForm" id="getBookForm">
+						<input type="hidden" id="userid" name="userid" value="${sessionScope.userid}"/>
+						<input type="hidden" id="bookid" name="bookid" value="${book.id}"/>
+						<div class="caption" style="color: white;">
+							<h4>${book.name}</h4>
+							<h4>${book.author}</h4>
+							<p>${book.description}</p>
+							<h3><a href="profile?username=${username}">${username}</a></h3>
+							<br>
+							<label for="comment" style="color: white;">Comment:</label>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-group col-lg-9">
+								<textarea class="form-control" id="comment" name="comment" style="height:100px;"></textarea>
 							</div>
-							
-							<c:if test="${!empty sessionScope.logged_user}">
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="submit"></label>
-								  <div class="col-md-4">
-								    <button type="submit" id="submit" name="submit" class="btn btn-success">I want it!</button>
-								  </div>
+							<div class="form-group col-lg-3">
+								<c:if test="${!empty sessionScope.logged_user}">
+									<button type="submit" id="submit" name="submit" class="btn btn-success" style="width:100%; height:100px;">I want it!</button>
+								</c:if>
 							</div>
-							</c:if>
-	                     </form>
-	             </div>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
-       </div>
-    </div><!--/.container-->
+	</div><!--/.container-->
 </body>
 </html>

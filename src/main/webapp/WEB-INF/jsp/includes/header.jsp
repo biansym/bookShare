@@ -14,6 +14,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Books <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="home">All books</a></li>
+                    <li class="divider"></li>
                     <li class="dropdown dropdown-submenu">
                       <a href="" class="dropdown-toggle" data-toggle="dropdown">Book category</a>
                       <ul class="dropdown-menu">
@@ -41,7 +42,14 @@
                 </c:if>
                 <c:choose>
                     <c:when test="${!empty sessionScope.logged_user}">
-                        <li><a href="logout" class="glyphicon glyphicon-log-in"> </a></li>
+
+                        <li class="dropdown dropdown-submenu-logout">
+                          <a href="" class="dropdown-toggle glyphicon glyphicon-log-out"></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="logout" style="color:black;">Logout</a></li>
+                          </ul>
+                        </li>
+
                     </c:when>
                     <c:otherwise>
                         <li><a href="login" class="glyphicon glyphicon-log-in"> Login</a></li>
@@ -85,7 +93,9 @@ body {
 
 
 <style>
-
+.dropdown-submenu-logout {
+    position: absolute;
+}
 
 .dropdown-menu > li.kopie > a {
     padding-left:5px;

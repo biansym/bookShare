@@ -29,6 +29,7 @@
 	<legend style="text-align:center;color:white;">My profile</legend>
 
 
+
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-sm-12">

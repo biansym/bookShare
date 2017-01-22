@@ -41,7 +41,7 @@
 			<div class="col-md-12 grid">
 				<c:choose>
 					<c:when test="${empty books}">
-						<h1> No books </h1>
+						<h1 style="color:white;"> No books </h1>
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="book" items="${books}" varStatus="theCount">
