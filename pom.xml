@@ -6,7 +6,6 @@
 	<groupId>com.group13</groupId>
 	<artifactId>bookShare</artifactId>
 	<version>1.2</version>
-	<packaging>war</packaging>
 
 	<name>bookShare</name>
 
