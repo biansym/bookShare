@@ -12,14 +12,14 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Books <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Books<b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="home">All books</a></li>
                     <li class="divider"></li>
                     <li class="dropdown dropdown-submenu"><a class="dropdown-toggle" data-toggle="dropdown">by Category</a>
                       <ul class="dropdown-menu">
                         <c:forEach var="category" items="${categories}">
-                            <li><a href="getBooksByCategory?id=${category.id}" class="list-group-item" style="color:black;">${category.name}</a></li>
+                            <li><a href="getBooksByCategory?id=${category.id}" class="list-group-item">${category.name}</a></li>
                         </c:forEach>
                       </ul>
                     </li>
@@ -71,39 +71,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
-.marginBottom-0 {margin-bottom:0;}
-
-.dropdown-submenu{position:relative;}
-.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
-.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
-.dropdown-submenu:hover>a:after{border-left-color:#555;}
-.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
-
-
 .dropdown-menu > li.kopie > a {
     padding-left:5px;
 }
 
-.dropdown-submenu {
-    position:relative;
-}
 .dropdown-submenu>.dropdown-menu {
    top:0;left:100%;
    margin-top:-6px;margin-left:-1px;
@@ -122,25 +94,4 @@
   margin-top: 5px;
   width: 0;
 }
-
-.dropdown-submenu:hover>a:after {
-    border-left-color:#555;
- }
-
-.dropdown-menu > li > a:hover, .dropdown-menu > .active > a:hover {
-  text-decoration: none;
-}
-
-@media (min-width: 768px) {
-  ul.nav li:hover > ul.dropdown-menu {
-    display: block;
-  }
-  #navbar {
-    text-align: center;
-  }
-}
 </style>
-
-
-
-<script scr="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
