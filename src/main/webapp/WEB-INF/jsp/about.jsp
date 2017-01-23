@@ -8,28 +8,23 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
-
 	<link href="static/css/bootstrap.min.css" rel="stylesheet">
 	<link href="static/css/offcanvas.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/bootstrap-submenu.min.css">
+
+    <script src="assets/js/bootstrap-dropdown.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="static/js/bootstrap.min.js"></script>
+    <script src="dist/js/bootstrap-submenu.min.js" defer></script>
+
 
 	<title>About</title>
 </head>
@@ -123,3 +118,4 @@
     </div><!--/.container-->
 </body>
 </html>
+

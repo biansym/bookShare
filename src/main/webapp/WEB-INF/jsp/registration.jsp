@@ -8,35 +8,26 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	    <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/css/offcanvas.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
-
-    	<link href="static/css/bootstrap.min.css" rel="stylesheet">
-    	<link href="static/css/offcanvas.css" rel="stylesheet">
-    	<script src="static/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="static/js/bootstrap.min.js"></script>
 
 	<title>Register</title>
 </head>
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	<legend style="text-align:center;color:black;">Register</legend>
+
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
 
@@ -94,7 +85,7 @@
 			    <br></br>
 			    <button type="reset" style="width:100%" class="btn btn-warning">Reset</button>
 			    <br></br>
-                <h5 class="title" style="color: black;">Have a count?</h5>
+                <h5 class="title" style="color: black;">Have an acount?</h5>
                 <h6 class="title" style="color: black;">Login!</h6>
                 <a href="login" class="btn btn-success" style="width:100%;">Login</a>
 			  </div>
