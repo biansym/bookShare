@@ -34,7 +34,7 @@
 	<title>Login</title>
 </head>
 <body>	
-    <legend style="text-align:center;color:white;">Add book</legend>
+    <legend style="text-align:center;color:black;">Add book</legend>
 	<%@include file="includes/header.jsp" %>
 
 	<div class="container">
@@ -45,7 +45,7 @@
 
 
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="username" style="color:white; font-size:18px; font-weight: 900;">Username</label>
+					<label class="col-md-4 control-label" for="username" style="color:black; font-size:18px; font-weight: 900;">Username</label>
 					<div class="col-md-4">
 						<input id="username" name="username" type="text" placeholder="username" class="form-control input-md" value="${loginuser.username}" required/>
 						<form:errors path="username" class="error text-danger"></form:errors>
@@ -56,7 +56,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="password" style="color:white; font-size:18px; font-weight: 900;">Password</label>
+					<label class="col-md-4 control-label" for="password" style="color:black; font-size:18px; font-weight: 900;">Password</label>
 					<div class="col-md-4">
 						<input id="password" name="password" type="password" placeholder="password" class="form-control input-md" value="${loginuser.password}" required/>
 						<form:errors path="password" class="error text-danger"></form:errors>
@@ -71,8 +71,8 @@
 					<div class="col-md-4">
 						<button type="submit" id="submit" name="submit" style="width:100%;" class="btn btn-success">Login</button>
 						<br></br>
-						<h5 class="title" style="color: white;">Do not have an acount?</h5>
-						<h6 class="title" style="color: white;">Create one in less than 1 minute!</h6>
+						<h5 class="title" style="color: black;">Do not have an acount?</h5>
+						<h6 class="title" style="color: black;">Create one in less than 1 minute!</h6>
 						<a href="register" class="btn btn-success" style="width:100%;">Create a new user</a>
 					</div>
 				</div>

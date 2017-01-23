@@ -33,7 +33,7 @@
 <body>
 
 	<%@include file="includes/header.jsp" %>
-    <legend style="text-align:center;color:white;">Books</legend>
+    <legend style="text-align:center;color:black;">Books</legend>
 
 	<div class="container">
 		<div class="row row-offcanvas row-offcanvas-right">
@@ -41,7 +41,7 @@
 			<div class="col-md-12 grid">
 				<c:choose>
 					<c:when test="${empty books}">
-						<h1 style="color:white;"> No books </h1>
+						<h1 style="color:black;"> No books </h1>
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="book" items="${books}" varStatus="theCount">
@@ -62,7 +62,7 @@
 									</c:choose>
 									<div class="caption">
 										<h4 style="font-size:18px; font-weight: 900;"><a href="viewbook?id=${book.id}">${book.name}</a></h4>
-										<h4 style="font-size:10px; font-weight: 900; color: #FFFFFF;">${book.author}</h4>
+										<h4 style="font-size:12px; font-weight: 900; color: black;">${book.author}</h4>
 									</div>
 								</div>
 							</div>

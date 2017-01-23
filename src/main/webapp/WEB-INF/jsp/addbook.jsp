@@ -26,7 +26,7 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	
+	<legend style="text-align:center;color:black;">Add book</legend>
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
 
@@ -34,10 +34,10 @@
 		<form:form class="form-horizontal" method="POST" action="addbook" modelAttribute="addBookForm" enctype="multipart/form-data">
 			<fieldset>
 
-			<legend style="text-align:center;color:white;">Add book</legend>
+
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="name" style="color:white;">Book name</label>
+			  <label class="col-md-4 control-label" for="name" style="color:black;">Book name</label>
 			  <div class="col-md-4">
 				  <input id="name" name="name" type="text" placeholder="book name" class="form-control input-md" value="${book.name}" required/>    
 				  <form:errors path="name" class="error text-danger"></form:errors>
@@ -45,7 +45,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="author" style="color:white;">Author</label>
+			  <label class="col-md-4 control-label" for="author" style="color:black;">Author</label>
 			  <div class="col-md-4">
 				  <input id="author" name="author" type="text" placeholder="author" class="form-control input-md" value="${book.author}" required/>  
 				  <form:errors path="author" class="error text-danger"></form:errors>
@@ -53,7 +53,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="category" style="color:white;">Category</label>
+			  <label class="col-md-4 control-label" for="category" style="color:black;">Category</label>
 			  <div class="col-md-4">
 				  <select class="selectpicker" id="category" name="category">
 					  <c:forEach var="category" items="${categories}">
@@ -65,7 +65,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="description" style="color:white;">Description</label>
+			  <label class="col-md-4 control-label" for="description" style="color:black;">Description</label>
 			  <div class="col-md-4">
 			  	<input id="description" name="description" type="text" placeholder="description" class="form-control input-md" value="${book.description}"/>
 			  	<form:errors path="description" class="error text-danger"></form:errors> 
@@ -73,7 +73,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="image" style="color:white;">Choose image</label>
+				<label class="col-md-4 control-label" for="image" style="color:black;">Choose image</label>
 			  <div class="col-md-4">
 			  	<input id="image" name="image" type="file" accept="image/*" value="${book.image}"/>
 <%--			  	<form:errors path="image" class="error text-danger"></form:errors>  --%>

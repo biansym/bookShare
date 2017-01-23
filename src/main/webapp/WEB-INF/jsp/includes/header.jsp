@@ -9,14 +9,17 @@
             <a class="navbar-brand" href="home">Book Share!</a>
         </div>
         <div id="navigationbar" class="collapse navbar-collapse">
+
             <ul class="nav navbar-nav navbar-right">
+
+
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Books <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="home">All books</a></li>
                     <li class="divider"></li>
                     <li class="dropdown dropdown-submenu">
-                      <a href="" class="dropdown-toggle" data-toggle="dropdown">Book category</a>
+                      <a class="dropdown-toggle" data-toggle="dropdown">by Category</a>
                       <ul class="dropdown-menu">
                         <c:forEach var="category" items="${categories}">
                             <li><a href="getBooksByCategory?id=${category.id}" class="list-group-item" style="color:black;">${category.name}</a></li>
@@ -59,15 +62,7 @@
         </div>
     </div>
 </nav>
-<style>
-body {
-     margin: 0;
-     background: url(/static/images/library.jpg);
-     background-size: contain;
 
-     font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-</style>
 
 
 
@@ -181,6 +176,12 @@ body {
   #navbar {
     text-align: center;
   }
+}
+
+
+
+body {
+    background-color: white;
 }
 
 </style>

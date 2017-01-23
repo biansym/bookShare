@@ -26,15 +26,16 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-<legend style="text-align:center;color:white;">Get books</legend>
+<legend style="text-align:center;color:black;">Get books</legend>
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
 
 		
 		<div class="col-md-12">
+		    <legend style="color:black;">I ask for this books</legend>
 			<c:forEach var="book" items="${books}">
 	     		<div class="col-sm-4 col-lg-4 col-md-4">
-	                 <div class="thumbnail">
+	                 <div class="thumbnail"style="background-color:inherit;background-image:linear-gradient(to bottom, #CAA639 0%, #FFE781 100%); background-size: cover; overflow: hidden; float:center; width:240px; height:450px;">
                      	<c:choose>
 	                 		<c:when test="${pageContext.request.contextPath}/imageController/${book.bookid} == null">
 	                 			<img src="http://placehold.it/150x200" alt="">
@@ -49,7 +50,7 @@
 	                        <p>${book.comment}</p>
 	                        <p>${book.ownerusername}</p>
 	                        <div class="text-right">
-		                        <a class="btn btn-danger" href="rejectrequest?id=${book.requestid}" > 
+		                        <a class="btn btn-danger" href="rejectrequest?id=${book.requestid}" style="width:100%;">
 		                        	Cancel
 		                        </a>
 		    				</div>
@@ -57,10 +58,11 @@
 	                 </div>
 	             </div>
 	     	</c:forEach>
-	     	
+	     </div>
+		<div class="col-md-12">
+		    <legend style="color:black;">I have read this books</legend>
 	     	<c:forEach var="takenbook" items="${takenbooks}">
-	     		<div class="col-sm-4 col-lg-4 col-md-4">
-	                 <div class="thumbnail">
+	     		<div class="thumbnail"style="background-color:inherit;background-image:linear-gradient(to bottom, #CAA639 0%, #FFE781 100%); background-size: cover; overflow: hidden; float:center; width:240px; height:450px;">
                      	<c:choose>
 	                 		<c:when test="${pageContext.request.contextPath}/imageController/${takenbook.bookid} == null">
 	                 			<img src="http://placehold.it/150x200" alt="">
@@ -81,7 +83,7 @@
 	                        	Not returned!
 	                       </c:if>
 	                       <c:if test="${takenbook.leftfeedback == 'no'}">
-	                        	<a class="btn btn-success" href="leavereference?id=${takenbook.takenbookid}" > 
+	                        	<a class="btn btn-success" href="leavereference?id=${takenbook.takenbookid}" >
 	                        		Leave feedback!
 	                        	</a>
 	                       </c:if>                        

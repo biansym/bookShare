@@ -26,7 +26,7 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	<legend style="text-align:center;color:white;">Book category</legend>
+	<legend style="text-align:center;color:black;">Book category</legend>
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
 

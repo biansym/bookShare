@@ -26,16 +26,19 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	<legend style="text-align:center;color:white;">Share book</legend>
+	<legend style="text-align:center;color:black;">Share book</legend>
 	<div class="container">
-      <div class="row row-offcanvas row-offcanvas-right">
+		<div class="row row-offcanvas row-offcanvas-right">
 
-		
-		<div class="col-md-12">
-		
+			<div class="col-md-12 grid">
+			<legend style="color:black;">Someone wants this books</legend>
 			<c:forEach var="book" items="${books}">
-	     		<div class="col-sm-4 col-lg-4 col-md-4">
-	                 <div class="thumbnail">
+
+	           <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 center-block">
+                <div class="center-block thumbnail .clearfix" style="background-color:inherit;background-image:linear-gradient(to bottom, #CAA639 0%, #FFE781 100%); background-size: cover; overflow: hidden; float:center; width:240px; height:450px;">
+
+	                 <div class="center-block" style="text-align:center;">
+
                      	<c:choose>
 	                 		<c:when test="${pageContext.request.contextPath}/imageController/${book.bookid} == null">
 	                 			<img src="http://placehold.it/150x200" alt="">
@@ -49,22 +52,36 @@
 	                        <h4>${book.author}</h4>
 	                        <p>${book.comment}</p>
 	                        <p>${book.username}</p>
-	                        <div class="text-right">
-		                        <a class="btn btn-success" href="acceptbook?id=${book.requestid}" > 
+	                        <div class="text-right col-sm-12">
+		                        <a class="btn btn-success" href="acceptbook?id=${book.requestid}" style="width:100%">
 		                        	Accept
 		                        </a>
-		                        <a class="btn btn-danger" href="rejectbook?id=${book.requestid}" > 
+		                    </div>
+		                    <div class="text-right col-sm-12" style="margin-top:2px;">
+		                        <a class="btn btn-danger" href="rejectbook?id=${book.requestid}"  style="width:100%">
 		                        	Reject
 		                        </a>
 		    				</div>
 	                    </div>
 	                 </div>
-	             </div>
+
+	                 </div>
+                </div>
 	     	</c:forEach>
-	     	
+	     	</div>
+	     	</div>
+	     	<div class="row row-offcanvas row-offcanvas-right">
+
+            <div class="col-md-12 grid">
+	     	<legend style="color:black;">Books that I shared</legend>
 	     	<c:forEach var="takenbook" items="${takenbooks}">
-	     		<div class="col-sm-4 col-lg-4 col-md-4">
-	                 <div class="thumbnail">
+
+	           <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 center-block">
+                <div class="center-block thumbnail .clearfix" style="background-color:inherit;background-image:linear-gradient(to bottom, #CAA639 0%, #FFE781 100%); background-size: cover; overflow: hidden; float:center; width:240px; height:450px;">
+
+	                 <div class="center-block" style="text-align:center;">
+
+
                      	<c:choose>
 	                 		<c:when test="${pageContext.request.contextPath}/imageController/${takenbook.bookid} == null">
 	                 			<img src="http://placehold.it/150x200" alt="">
@@ -77,25 +94,26 @@
 	                        <h4><a href="viewbook?id=${takenbook.bookid}">${takenbook.bookname}</a></h4>
 	                        <h4>${takenbook.bookauthor}</h4>
 	                        <p><a href="profile?username=${sessionScope.logged_user}">${takenbook.username}</a></p>
-	                        
+
 	                       <c:if test="${takenbook.leftfeedback == 'no'}">
-	                        	<a class="btn btn-success" href="leavereference?id=${takenbook.takenbookid}" > 
+	                        	<a class="btn btn-success" href="leavereference?id=${takenbook.takenbookid}" >
 	                        		Leave feedback!
 	                        	</a>
 	                       </c:if>
 	                       <c:if test="${takenbook.returned == 'no'}">
-	                        	<a class="btn btn-success" href="returned?id=${takenbook.takenbookid}" > 
+	                        	<a class="btn btn-success" href="returned?id=${takenbook.takenbookid}" >
 	                        		Returned
 	                        	</a>
-	                       </c:if> 
-	                         
-	                    </div>
-	                 </div>
-	             </div>
+	                       </c:if>
+	                     </div>
+	                </div>
+
+	           </div>
+              </div>
 	     	</c:forEach>
-	     	
+	     	</div>
+        </div>
 		</div>
-       </div>
     </div><!--/.container-->
 </body>
 </html>

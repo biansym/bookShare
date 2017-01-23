@@ -36,7 +36,7 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	<legend style="text-align:center;color:white;">Register</legend>
+	<legend style="text-align:center;color:black;">Register</legend>
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
 
@@ -45,7 +45,7 @@
 
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="username" style="color:white;">Username</label>
+			  <label class="col-md-4 control-label" for="username" style="color:black;">Username</label>
 			  <div class="col-md-4">
 				  	<input id="username" name="username" type="text" placeholder="username" class="form-control input-md" value="${user.username}" required/>    
 				  	<form:errors path="username" class="error text-danger"></form:errors>
@@ -56,7 +56,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="name" style="color:white;">First name</label>
+			  <label class="col-md-4 control-label" for="name" style="color:black;">First name</label>
 			  <div class="col-md-4">
 				  <input id="name" name="name" type="text" placeholder="first name" class="form-control input-md" value="${user.name}" required/>    
 				  <form:errors path="name" class="error text-danger"></form:errors>
@@ -64,7 +64,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="surname" style="color:white;">Last name</label>
+			  <label class="col-md-4 control-label" for="surname" style="color:black;">Last name</label>
 			  <div class="col-md-4">
 				  <input id="surname" name="surname" type="text" placeholder="last name" class="form-control input-md" value="${user.surname}" required/>  
 				  <form:errors path="surname" class="error text-danger"></form:errors>
@@ -72,7 +72,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="email" style="color:white;">Email</label>
+			  <label class="col-md-4 control-label" for="email" style="color:black;">Email</label>
 			  <div class="col-md-4">
 				  <input id="email" name="email" type="email" placeholder="email" class="form-control input-md" value="${user.email}" required/> 
 				  <form:errors path="name" class="error text-danger"></form:errors>
@@ -80,7 +80,7 @@
 			</div>
 			
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="email" style="color:white;">Password</label>
+			  <label class="col-md-4 control-label" for="email" style="color:black;">Password</label>
 			  <div class="col-md-4">
 			  	<input id="password" name="password" type="password" placeholder="password" class="form-control input-md" value="${user.password}" required/>
 			  	<form:errors path="password" class="error text-danger"></form:errors> 
@@ -94,8 +94,8 @@
 			    <br></br>
 			    <button type="reset" style="width:100%" class="btn btn-warning">Reset</button>
 			    <br></br>
-                <h5 class="title" style="color: white;">Have a count?</h5>
-                <h6 class="title" style="color: white;">Login!</h6>
+                <h5 class="title" style="color: black;">Have a count?</h5>
+                <h6 class="title" style="color: black;">Login!</h6>
                 <a href="login" class="btn btn-success" style="width:100%;">Login</a>
 			  </div>
 			</div>

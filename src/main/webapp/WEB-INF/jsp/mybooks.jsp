@@ -26,25 +26,28 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	<legend style="text-align:center;color:white;">My books</legend>
+	<legend style="text-align:center;color:black;"><h1>My books</h1></legend>
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
 
 		
 		<div class="col-md-12">
-		    <c:forEach var="book" items="${books} == null">
-		    <h1 class="instructions" style="color: white; font-size: 20px;">
-                Upload your first book! It is easy.
-                Click in the next button "ADD A NEW BOOK!" and follow the instructions there!
-            </h1>
-            </c:forEach>
+		    <c:if test="${books} != null">
+                <h1 class="instructions" style="color: black; font-size: 20px;">
+                    Upload your first book! It is easy.
+                    Click in the next button "ADD A NEW BOOK!" and follow the instructions there!
+                </h1>
+            </c:if>
 			<p>
 				<a href="addbook" class="btn btn-primary btn-lg btn-block">Add new book!</a>
 			</p>
 
 			<c:forEach var="book" items="${books}">
-	     		<div class="col-sm-4 col-lg-4 col-md-4">
-	                 <div class="thumbnail">
+
+	           <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 center-block">
+                <div class="center-block thumbnail .clearfix" style="background-color:inherit;background-image:linear-gradient(to bottom, #CAA639 0%, #FFE781 100%); background-size: cover; overflow: hidden; float:center; width:240px; height:450px;">
+
+	                 <div class="center-block" style="text-align:center;">
 	                 	<c:choose>
 	                 		<c:when test="${pageContext.request.contextPath}/imageController/${book.id} == null">
 	                 			<img src="http://placehold.it/150x200" alt="">
@@ -61,12 +64,13 @@
 		                        <h4>${book.author}</h4>
 		                        <p>${book.description}</p>
 		                        <div class="text-right">
-			    					<button type="submit" class="btn btn-danger">Delete</button>
+			    					<button type="submit" class="btn btn-danger" style="width:100%;">Delete</button>
 			    				</div>
 		                    </div>
 	                     </form>
 	                 </div>
 	             </div>
+	           </div>
 	     	</c:forEach>
 		</div>
        </div>

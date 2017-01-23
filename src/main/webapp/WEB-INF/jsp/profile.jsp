@@ -26,7 +26,7 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	<legend style="text-align:center;color:white;">My profile</legend>
+	<legend style="text-align:center;color:black;">My profile</legend>
 
 
 
@@ -35,14 +35,14 @@
         <div class="col-sm-12">
 		
 		<div align="center">
-        	<h1 style="color: white;"><span class="glyphicon glyphicon-user" aria-hidden="true" style="color: white;"></span>   ${user.username}</h1>
-        	<h2 style="color: white;"><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: white;"></span>   ${user.email}</h2>
+        	<h1 style="color: black;"><span class="glyphicon glyphicon-user" aria-hidden="true" style="color: black;"></span>   ${user.username}</h1>
+        	<h2 style="color: black;"><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: black;"></span>   ${user.email}</h2>
         </div>
         
         <table border="1">
         	<c:choose>
         		<c:when test="${empty references}">
-        			<h3 style="color: white;"> No references </h3>
+        			<h3 style="color: black;"> No references </h3>
         		</c:when>
         		<c:otherwise>
 	        		<c:forEach var="reference" items="${references}">

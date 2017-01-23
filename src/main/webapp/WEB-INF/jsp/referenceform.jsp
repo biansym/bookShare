@@ -26,33 +26,28 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	<legend style="text-align:center;color:white;">Reference</legend>
+	<legend style="text-align:center;color:black;">Reference</legend>
 	<div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
-			<%@include file="includes/sidebar.jsp" %>
-        <div class="col-xs-12 col-sm-9">
+
 		<form:form class="form-horizontal" method="POST" action="submitreference" >
 			<fieldset>
-
-			<legend>Leave reference</legend>
-			
 
 				<input type="hidden" name="takenbookid" id="takenbookid" value="${takenbookid}"/>
 
 				<div class="form-group">
-					<label>Feedback: </label>
+					<label>Write a sort feedback of the book: </label>
 					<div>
 					<input id="review" name="review" type="text" placeholder="How would you rate this user's reliability?" class="form-control input-md" required/>  
 					</div>
 				</div>
 				
 
-			    <button type="submit" id="submit" name="submit" class="btn btn-success">Submit</button>
+			    <button type="submit" id="submit" name="submit" class="btn btn-success" style="width:100%">Submit the feedback</button>
 
 			</fieldset>
 		</form:form>
-         
-        </div><!--/.col-xs-12.col-sm-9-->
+
  
       </div><!--/row-->
 

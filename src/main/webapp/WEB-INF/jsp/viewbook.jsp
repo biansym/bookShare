@@ -26,7 +26,7 @@
 <body>	
 
 	<%@include file="includes/header.jsp" %>
-	<legend style="text-align:center;color:white;">Book</legend>
+	<legend style="text-align:center;color:black;">Book</legend>
 	<div class="container">
 		<div class="row row-offcanvas row-offcanvas-right">
 
@@ -45,13 +45,13 @@
 					<form method="POST" action="getbook" name="getBookForm" id="getBookForm">
 						<input type="hidden" id="userid" name="userid" value="${sessionScope.userid}"/>
 						<input type="hidden" id="bookid" name="bookid" value="${book.id}"/>
-						<div class="caption" style="color: white;">
+						<div class="caption" style="color: black;">
 							<h4>${book.name}</h4>
 							<h4>${book.author}</h4>
 							<p>${book.description}</p>
 							<h3><a href="profile?username=${username}">${username}</a></h3>
 							<br>
-							<label for="comment" style="color: white;">Comment:</label>
+							<label for="comment" style="color: black;">Comment:</label>
 						</div>
 						<div class="col-lg-12">
 							<div class="form-group col-lg-9">
