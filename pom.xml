@@ -3,13 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.team</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.1</version>
-	<packaging>jar</packaging>
+	<groupId>com.group13</groupId>
+	<artifactId>bookShare</artifactId>
+	<version>1.2</version>
+	<packaging>war</packaging>
 
 	<name>bookShare</name>
-	<description>Demo project for Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -106,4 +105,5 @@
 	</build>
 
 
+	<description>bookShare - website for sharing books</description>
 </project>
