@@ -47,7 +47,7 @@ public class DeleteBookController {
 		
 		Book deletingBook = bookService.findBookById(bookid);
 		if(deletingBook.getUserid() == userid) {
-			bookService.deleteBookById(bookid);	
+			bookService.deleteBookById(bookid);
 		} 
 
 		return "redirect:mybooks";

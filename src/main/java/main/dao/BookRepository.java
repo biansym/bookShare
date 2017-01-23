@@ -2,6 +2,7 @@ package main.dao;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -12,7 +13,12 @@ public interface BookRepository extends CrudRepository<Book, Long>{
 	List<Book> findById(long id);
 	List<Book> findByUserid(long id);
 	int deleteById(long id);
-	
+
+	@Modifying
+	@Query("update book bo set bo.description = 'Not available!', bo.image = null where bo.id = ?1")
+	int deleteByBookId(long id);
+
+
 	@Query("select bo.userid from book bo where bo.id = ?1 ")
 	long getUserIdByBookid(long bookId);
 	
