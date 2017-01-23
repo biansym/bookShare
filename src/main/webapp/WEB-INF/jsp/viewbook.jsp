@@ -20,7 +20,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
 	
-	<title>My books!</title>
+	<title>Book</title>
 </head>
 <body>	
 

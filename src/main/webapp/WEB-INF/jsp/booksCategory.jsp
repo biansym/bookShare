@@ -20,7 +20,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
 	
-	<title>Book share!</title>
+	<title>Book category</title>
 </head>
 <body>	
 
