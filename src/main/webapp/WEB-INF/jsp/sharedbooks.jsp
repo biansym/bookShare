@@ -8,23 +8,21 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="static/css/offcanvas.css" rel="stylesheet">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="static/js/bootstrap.min.js"></script>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/offcanvas.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+	
 	<title>My books!</title>
 </head>
-<body>
+<body>	
 
 	<%@include file="includes/header.jsp" %>
 
@@ -41,9 +39,9 @@
 						 <div class="center-block" style="text-align:center;">
 
 							<c:choose>
-                                <c:when test="${fn:length(book.image) < 100}">
-                                    <img src="http://img-aws.ehowcdn.com/615x200/cme/cme_public_images/www_ehow_com/photos.demandstudios.com/146/217/fotolia_554582_XS.jpg" alt="">
-                                </c:when>
+								<c:when test="${pageContext.request.contextPath}/imageController/${book.bookid} == null">
+									<img src="http://placehold.it/150x200" alt="">
+								</c:when>
 								<c:otherwise>
 									<img src="${pageContext.request.contextPath}/imageController/${book.bookid}" class="img-thumbnail" width="150" height="200"/>
 								</c:otherwise>
@@ -82,9 +80,9 @@
 
 						 <div class="center-block" style="text-align:center;">
 							<c:choose>
-                                <c:when test="${fn:length(book.image) < 100}">
-                                    <img src="http://img-aws.ehowcdn.com/615x200/cme/cme_public_images/www_ehow_com/photos.demandstudios.com/146/217/fotolia_554582_XS.jpg" alt="">
-                                </c:when>
+								<c:when test="${pageContext.request.contextPath}/imageController/${takenbook.bookid} == null">
+									<img src="http://placehold.it/150x200" alt="">
+								</c:when>
 								<c:otherwise>
 									<img src="${pageContext.request.contextPath}/imageController/${takenbook.bookid}" class="img-thumbnail" width="150" height="200"/>
 								</c:otherwise>
