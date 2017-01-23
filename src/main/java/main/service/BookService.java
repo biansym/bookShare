@@ -24,7 +24,8 @@ public class BookService {
 	public List<Book> findAll() {
 		List<Book> books = new ArrayList<>();
 		for(Book book: repository.findAll()) {
-			books.add(book);
+			if(!book.getDescription().equals("Not available!"))
+				books.add(book);
 		}
 		return books; 
 	}
@@ -32,6 +33,7 @@ public class BookService {
 	public List<Book> getBooksByCategoryId(int categoryId) {
 		List<Book> books = new ArrayList<>();
 		for(Book book: repository.getBooksByCategory(categoryId)) {
+			if(!book.getDescription().equals("Not available!"))
 			books.add(book);
 		}
 		return books; 
@@ -40,6 +42,7 @@ public class BookService {
 	public Book findBookById(long id) {
 		List<Book> books = new ArrayList<>();
 		for(Book book: repository.findById(id)) {
+			if(!book.getDescription().equals("Not available!"))
 			books.add(book);
 			break;
 		}
@@ -53,6 +56,7 @@ public class BookService {
 	public List<Book> findBooksByUserId(Long userId) {
 		List<Book> books = new ArrayList<>();
 		for(Book book: repository.findByUserid(userId)) {
+			if(!book.getDescription().equals("Not available!"))
 			books.add(book);
 		}
 		return books;
@@ -67,7 +71,7 @@ public class BookService {
 	}
 	
 	public long deleteBookById(long bookId) {
-		return repository.deleteById(bookId);
+		return repository.deleteByBookId(bookId);
 	}
 	
 }

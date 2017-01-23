@@ -1,7 +1,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>                             
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -40,8 +40,8 @@
 	                 <div class="center-block" style="text-align:center;">
 
                      	<c:choose>
-	                 		<c:when test="${pageContext.request.contextPath}/imageController/${book.bookid} == null">
-	                 			<img src="http://placehold.it/150x200" alt="">
+	                 		<c:when test="${fn:length(book.image) < 100}">
+	                 			<img src="http://img-aws.ehowcdn.com/615x200/cme/cme_public_images/www_ehow_com/photos.demandstudios.com/146/217/fotolia_554582_XS.jpg" alt="">
 	                 		</c:when>
 	                 		<c:otherwise>
 	                 			<img src="${pageContext.request.contextPath}/imageController/${book.bookid}" class="img-thumbnail" width="150" height="200"/>
@@ -83,9 +83,9 @@
 
 
                      	<c:choose>
-	                 		<c:when test="${pageContext.request.contextPath}/imageController/${takenbook.bookid} == null">
-	                 			<img src="http://placehold.it/150x200" alt="">
-	                 		</c:when>
+							<c:when test="${fn:length(book.image) < 100}">
+								<img src="http://img-aws.ehowcdn.com/615x200/cme/cme_public_images/www_ehow_com/photos.demandstudios.com/146/217/fotolia_554582_XS.jpg" alt="">
+							</c:when>
 	                 		<c:otherwise>
 	                 			<img src="${pageContext.request.contextPath}/imageController/${takenbook.bookid}" class="img-thumbnail" width="150" height="200"/>
 	                 		</c:otherwise>

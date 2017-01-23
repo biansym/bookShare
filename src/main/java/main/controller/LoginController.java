@@ -34,7 +34,9 @@ public class LoginController {
 	}
 	
 	@GetMapping("/login")
-	public String registr(Model model) {
+	public String registr(Model model, HttpServletRequest request) {
+		List<Category> categories = categoryService.findAll();
+		request.setAttribute("categories", categories);
 		return "login";
 	}
 	
