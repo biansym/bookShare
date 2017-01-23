@@ -13,13 +13,13 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Books<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="home">All books</a></li>
+                  <ul class="dropdown-menu" style="background-color:#343434; color:white">
+                    <li><a href="home" style="background-#343434; color:white">All books</a></li>
                     <li class="divider"></li>
-                    <li class="dropdown dropdown-submenu"><a class="dropdown-toggle" data-toggle="dropdown">by Category</a>
-                      <ul class="dropdown-menu">
+                    <li class="dropdown dropdown-submenu"><a class="dropdown-toggle" data-toggle="dropdown" style="background-color:#343434; color:white">by Category</a>
+                      <ul class="dropdown-menu" style="background-color:#343434">
                         <c:forEach var="category" items="${categories}">
-                            <li><a href="getBooksByCategory?id=${category.id}" class="list-group-item">${category.name}</a></li>
+                            <a style="background-color:#343434; color:white" href="getBooksByCategory?id=${category.id}" class="list-group-item">${category.name}</a>
                         </c:forEach>
                       </ul>
                     </li>
