@@ -50,18 +50,23 @@
 							<p>${book.description}</p>
 							<h3><a href="profile?username=${username}">${username}</a></h3>
 							<br>
-							<label for="comment" style="color: black;">Comment:</label>
 						</div>
-						<div class="col-lg-12">
-							<div class="form-group col-lg-9">
-								<textarea class="form-control" id="comment" name="comment" style="height:100px;"></textarea>
-							</div>
-							<div class="form-group col-lg-3">
-								<c:if test="${!empty sessionScope.logged_user}">
-									<button type="submit" id="submit" name="submit" class="btn btn-success" style="width:100%; height:100px;">I want it!</button>
-								</c:if>
-							</div>
-						</div>
+						<c:choose>
+							<c:when test="${empty sessionScope.logged_user}">
+								<h3>If you want to take a book, you need to register!</h3>
+							</c:when>
+							<c:otherwise>
+								<label for="comment" style="color: black;">Comment:</label>
+								<div class="col-lg-12" style="text-align:center">
+									<div class="form-group col-lg-9">
+										<textarea class="form-control" id="comment" name="comment" style="height:100px;"></textarea>
+									</div>
+									<div class="form-group col-lg-3">
+										<button type="submit" id="submit" name="submit" class="btn btn-success" style="width:100%; height:100px;">I want it!</button>
+									</div>
+								</div>
+							</c:otherwise>
+						</c:choose>
 					</form>
 				</div>
 			</div>

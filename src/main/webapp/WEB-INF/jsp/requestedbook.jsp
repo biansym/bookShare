@@ -34,7 +34,7 @@
 				<legend style="color:black;">I sent request to take these books</legend>
 				<c:forEach var="book" items="${books}">
 				   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 center-block">
-					<div class="center-block thumbnail .clearfix" style="background-color:#E8FFFB; background-size: cover; overflow: hidden; float:center; width:240px; height:450px;">
+					<div class="center-block thumbnail .clearfix" style="background-color:#E8FFFB; background-size: cover; overflow: hidden; float:center; width:240px; height:400px;">
                         <div class="center-block" style="text-align:center;">
    							<c:choose>
 								<c:when test="${fn:length(book.image) < 100}"> 
@@ -48,12 +48,7 @@
 								<h4><a href="viewbook?id=${book.bookid}">${book.bookname}</a></h4>
 								<h4>${book.author}</h4>
 								<p>${book.comment}</p>
-								<p>${book.ownerusername}</p>
-								<div class="text-right">
-									<a class="btn btn-danger" href="rejectrequest?id=${book.requestid}" style="width:100%;">
-										Cancel
-									</a>
-								</div>
+								<p>${book.ownerusername}</p>								
 							</div>
 						 </div>
 					 </div>
